@@ -1,88 +1,38 @@
-# token-minter
+### On-chain counting
+### Project Name: Counting 
+### Value Proposition
+The counting program facilitates the ability for any human, regardless of cognitive abilities, to keep track of a number.
+The number can be incremented and decremented, enabling full control of the count for the individual.
 
-This is a Next.js app containing:
+### Product-Market Fit
+Current human brain capabilities varies from individual to individual, where even humans with high cognitive brain capabilities occasionally suffers from Short Term Memory Loss (STML).
+Therefore, any individual can store and interact with an on-chain count, with the ability to both read and modify it freely.
 
-- Tailwind CSS setup for styling
-- Useful wallet UI elements setup using [@solana/web3.js](https://www.npmjs.com/package/@solana/web3.js)
-- A basic Greeter Solana program written in Anchor
-- UI components for interacting with the Greeter program
+### Target User Profiles
+* The "human" user: This user is any human, regardless of cognitive abilities. 
+They value the ability to read and modify their count, without any restrictions.
 
-## Getting Started
+### User Story
+* As a new user, when I register, all required accounts are created.
+* As a new user, when I increment/decrement my account, an error will occur.
+* As a registered user, when I increment/decrement, the account value will increment/decrement.
+* As a registered user, when I create a new account, an error will occur.
+* As a new/registered user, when I create/increment/decrement an account that do not belong to me, an error will occur.
 
-### Installation
+![Counter sequence diagram](./figures/anchor_counter.drawio.svg)
 
-#### Download the template
-
-```shell
-pnpm create solana-dapp@latest -t gh:solana-foundation/templates/web3js/token-minter
+### How To Run:
+1. Clone and enter the repo
+```
+git clone https://github.com/CarlTornberg/solana-token-minter.git
+cd solana-token-minter
+```
+2. Install dependencies
+```
+npm install
 ```
 
-#### Install Dependencies
-
-```shell
-pnpm install
+3. Run/test
 ```
-
-## Apps
-
-### anchor
-
-This is a Solana program written in Rust using the Anchor framework.
-
-#### Commands
-
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the
-command with `pnpm`, eg: `pnpm anchor`.
-
-#### Sync the program id:
-
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the
-Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
-
-You will manually need to update the constant in `anchor/lib/counter-exports.ts` to match the new program id.
-
-```shell
-pnpm anchor keys sync
-```
-
-#### Build the program:
-
-```shell
-pnpm anchor-build
-```
-
-#### Start the test validator with the program deployed:
-
-```shell
-pnpm anchor-localnet
-```
-
-#### Run the tests
-
-```shell
-pnpm anchor-test
-```
-
-#### Deploy to Devnet
-
-```shell
-pnpm anchor deploy --provider.cluster devnet
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
-Start the web app
-
-```shell
-pnpm dev
-```
-
-Build the web app
-
-```shell
-pnpm build
-```
+npm run dev
+ ``` 
